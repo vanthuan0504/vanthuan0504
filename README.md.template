@@ -1,0 +1,24 @@
+# About me
+- Name: Dang Van Thuan
+- My blog: [Update soon](https://xprowess.com)
+- Email: dangvanthuan0504@gmail.com(mailto:dangvanthuan0504@gmail.com)
+- Update soon
+## Today's Weather Forecast in My Hometown
+
+{{ with $todayWeather := index.Weathers 0}}
+
+`{{ $todayWeather.City }}, {{ $todayWeather.Country }} - {{ formatDate $todayWeather.StartTime $todayWeather.Timezone }}`
+
+<img src = "{{ $todayWeather.Icon }}"/>
+
+{{ $todayWeather.Condition}}
+
+{{template "hourly-table" $todayWeather.HourlyWeathers}}
+
+{{- end }}
+
+<div align="right">
+
+*Updated at: {{ formatTimr.UpdatedAt}} - by **[vanthuan0504/weather-forecast](https://github.com/vanthuan0504/weather-forecast)***
+
+</div>
